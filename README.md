@@ -1,15 +1,15 @@
 <div align="center">
 
-# miglioDev <sub><sup>Student | Italy</sup></sub>
+# miglioDev <small>Student | Italy</small>
 
-# 📊 GitHub Analytics
+## 📊 GitHub Analytics
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" alt="Contribution Streak" width="48%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" width="48%" />
 
 <br />
 
-### *Compiling progress... 🧠*
+### Compiling progress... 🧠
 
-⭐ From [miglioDev](https://github.com/miglioDev)
+<small>From [miglioDev](https://github.com/miglioDev)</small>
 
 </div>
