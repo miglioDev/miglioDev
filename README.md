@@ -1,6 +1,6 @@
 <div align="center">
 
-# miglioDev                       <small>Student | Italy</small>
+# miglioDev
 
 ## 📊 GitHub Analytics
 
@@ -9,5 +9,7 @@
 <br />
 
 ### Compiling progress... 🧠
+
 <small>From [miglioDev](https://github.com/miglioDev)</small>
+
 </div>
