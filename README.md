@@ -4,12 +4,12 @@
 
 ## GitHub Analytics
 
-<img src="https://github-readme-stats.vercel.app/api?username=miglioDev&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&hide_title=true&count_private=true" alt="GitHub Stats" height="165" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" alt="Contribution Streak" height="165" />
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="https://github-readme-stats.vercel.app/api?username=miglioDev&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&hide_title=true&count_private=true" alt="GitHub Stats" height="165" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" alt="Contribution Streak" height="165" />
+</div>
 
----
-
-Compiling progress... 🧠
+#Compiling progress... 🧠
 
 From [miglioDev](https://github.com/miglioDev)
 
