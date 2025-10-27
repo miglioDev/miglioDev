@@ -4,7 +4,7 @@
 
 ## 📊 GitHub Analytics
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" width="48%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117&include_all_commits=true" width="48%" />
 
 <br />
 
