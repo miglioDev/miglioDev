@@ -9,7 +9,7 @@
 
 ---
 
-*Compiling progress... 🧠*
+Compiling progress... 🧠
 
 From [miglioDev](https://github.com/miglioDev)
 
