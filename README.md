@@ -2,15 +2,15 @@
 
 # miglioDev <sub><sup>Student | Italy</sup></sub>
 
-## GitHub Analytics
+## 📊 GitHub Analytics
 
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="https://github-readme-stats.vercel.app/api?username=miglioDev&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&hide_title=true&count_private=true" alt="GitHub Stats" height="165" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" alt="Contribution Streak" height="165" />
-</div>
+<img src="https://github-readme-stats.vercel.app/api?username=miglioDev&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&hide_title=true" alt="GitHub Stats" width="48%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" alt="Contribution Streak" width="48%" />
 
-#Compiling progress... 🧠
+<br />
 
-From [miglioDev](https://github.com/miglioDev)
+### *Compiling progress... 🧠*
+
+⭐ From [miglioDev](https://github.com/miglioDev)
 
 </div>
