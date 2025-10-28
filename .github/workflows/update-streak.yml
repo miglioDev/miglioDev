@@ -1,0 +1,24 @@
+name: Update GitHub Streak Card
+on:
+  schedule:
+    - cron: '0 * * * *' # every H
+  workflow_dispatch: # puoi anche lanciarlo a mano da "Actions"
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update streak card URL
+        run: |
+          sed -i 's|https://streak-stats.demolab.com/.*|https://streak-stats.demolab.com/?user=miglioDev\&theme=dark\&hide_border=true\&background=0D1117\&include_all_commits=true\&token=${{ secrets.STREAK_TOKEN }}|' README.md
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "🔄 Update streak stats with token" || echo "No changes"
+          git push
