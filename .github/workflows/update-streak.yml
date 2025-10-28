@@ -1,8 +1,12 @@
 name: Update GitHub Streak Card
+# perm for file file pushing 
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron: '0 */3 * * *' # every 
-  workflow_dispatch: 
+    - cron: '0 */12 * * *' # update
+  workflow_dispatch: #manual
 
 jobs:
   update-readme:
@@ -10,15 +14,34 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
 
-      - name: Update streak card URL
+      - name: Ensure assets directory exists
         run: |
-          sed -i 's|https://streak-stats.demolab.com/.*|https://streak-stats.demolab.com/?user=miglioDev\&theme=dark\&hide_border=true\&background=0D1117\&include_all_commits=true\&token=${{ secrets.STREAK_TOKEN }}|' README.md
+          mkdir -p assets
 
-      - name: Commit and push changes
+      - name: Download streak image (secure, using secret)
+        env:
+          STREAK_TOKEN: ${{ secrets.STREAK_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Costruisce URL senza stamparlo nei log
+          URL="https://streak-stats.demolab.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117&include_all_commits=true&token=${STREAK_TOKEN}"
+          # Scarica silenziosamente l'immagine
+          curl -fsS "$URL" -o assets/streak.png
+          # Verifica che file non vuoto
+          if [ ! -s assets/streak.png ]; then
+            echo "Failed to download image or image empty" >&2
+            exit 1
+          fi
+          echo "Image downloaded to assets/streak.png"
+
+      - name: Commit and push updated image (no token exposed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "🔄 Update streak stats with token" || echo "No changes"
-          git push
+          git add assets/streak.png
+          git commit -m "🔄 Update streak image" || echo "No changes to commit"
+          git push || echo "No changes to push"
