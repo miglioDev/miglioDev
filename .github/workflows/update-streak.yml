@@ -1,12 +1,11 @@
 name: Update GitHub Streak Card
-# perm for file file pushing 
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # update
-  workflow_dispatch: #manual
+    - cron: '0 */12 * * *' 
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -19,26 +18,39 @@ jobs:
           persist-credentials: true
 
       - name: Ensure assets directory exists
-        run: |
-          mkdir -p assets
+        run: mkdir -p assets
 
-      - name: Download streak image (secure, using secret)
+      - name: Download streak image (primary)
         env:
           STREAK_TOKEN: ${{ secrets.STREAK_TOKEN }}
         run: |
           set -euo pipefail
-          # Costruisce URL senza stamparlo nei log
           URL="https://streak-stats.demolab.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117&include_all_commits=true&token=${STREAK_TOKEN}"
-          # Scarica silenziosamente l'immagine
-          curl -fsS "$URL" -o assets/streak.png
-          # Verifica che file non vuoto
-          if [ ! -s assets/streak.png ]; then
-            echo "Failed to download image or image empty" >&2
-            exit 1
+          curl -fsS "$URL" -o assets/streak.png || true
+          # check first 8 bytes = PNG signature
+          sig=$(xxd -p -l 8 assets/streak.png || echo "")
+          echo "sig: $sig" >/tmp/sig.txt
+          if [ "$sig" != "89504e470d0a1a0a" ]; then
+            echo "Primary source did not return a PNG (sig=$sig). Will try fallback." >&2
+            cat /tmp/sig.txt
+            exit 2
           fi
-          echo "Image downloaded to assets/streak.png"
+          echo "Primary source returned a valid PNG."
 
-      - name: Commit and push updated image (no token exposed)
+      - name: Fallback to mirror if primary failed
+        if: failure() || steps.download_streak_image.outcome == 'failure'
+        run: |
+          set -euo pipefail
+          echo "Attempting fallback mirror..."
+          curl -fsS "https://github-readme-streak-stats.herokuapp.com/?user=miglioDev&theme=dark&hide_border=true&background=0D1117" -o assets/streak.png
+          sig=$(xxd -p -l 8 assets/streak.png || echo "")
+          if [ "$sig" != "89504e470d0a1a0a" ]; then
+            echo "Fallback also did not return a PNG (sig=$sig). Aborting." >&2
+            exit 3
+          fi
+          echo "Fallback returned a valid PNG."
+
+      - name: Commit and push updated image
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
