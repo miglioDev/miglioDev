@@ -1,8 +1,8 @@
 name: Update GitHub Streak Card
 on:
   schedule:
-    - cron: '0 * * * *' # every H
-  workflow_dispatch: # puoi anche lanciarlo a mano da "Actions"
+    - cron: '0 */3 * * *' # every 
+  workflow_dispatch: 
 
 jobs:
   update-readme:
