@@ -1,16 +1,20 @@
 <div align="center">
 
 # miglioDev  
-*Building things. Breaking limits.*
+### _Turning coffee into code ☕_  
 
 ---
 
-## 📊 GitHub Streak  
-[![GitHub Streak](https://github-readme-streak-stats-khaki-zeta.vercel.app?user=miglioDev&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=FF6B81&currStreakNum=FFFFFF)](https://git.io/streak-stats)
+💻 **Computer Science Student**  
+🐧 **Linux Enthusiast**  
+⚙️ **Learning • Building • Automating**
 
 ---
 
-### 💬 “Code. Improve. Repeat.”
-<small>From <a href="https://github.com/miglioDev">miglioDev</a></small>
+[![GitHub Streak](https://github-readme-streak-stats-khaki-zeta.vercel.app?user=miglioDev&theme=dark&hide_border=true&background=0D1117)](https://git.io/streak-stats)
+
+---
+
+<sub>More coming soon... 🚀</sub>
 
 </div>
