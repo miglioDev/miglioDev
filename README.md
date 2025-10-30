@@ -1,7 +1,7 @@
 <div align="center">
 
 # miglioDev  
-### _Turning coffee into code ☕_  
+### _Turning coffee into code_ ☕  
 
 ---
 
