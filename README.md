@@ -7,7 +7,7 @@
 
 💻 **Computer Science Student**  
 🐧 **Linux Enthusiast**  
-⚙️ **Learning • Building • Automating**
+🧠 **Every day a bit of code — small steps build great skills**
 
 ---
 
