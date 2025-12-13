@@ -15,6 +15,6 @@
 
 ---
 
-<sub>More coming soon... 🚀</sub>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&size=14&pause=1000&color=58A6FF&center=true&width=220&lines=More+coming+soon%E2%80%A6)](https://git.io/typing-svg)
 
 </div>
