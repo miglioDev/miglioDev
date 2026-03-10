@@ -1,13 +1,10 @@
 <div align="center">
-
-# miglioDev  
-### _Turning coffee into code_ ☕  
-
----
+  
+# miglioDev
+### _Turning coffee into code_ ☕
 
 💻 **Computer Science Student**  
-🐧 **Linux Enthusiast**  
-🧠 **Every day a bit of code — small steps build great skills**
+🐧 **Linux Enthusiast**
 
 ---
 
@@ -15,6 +12,8 @@
 
 ---
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&size=14&pause=1000&color=58A6FF&center=true&width=220&lines=More+coming+soon%E2%80%A6)](https://git.io/typing-svg)
+▶ Linux & Programming videos
 
-</div>
+[![YouTube](https://img.shields.io/badge/YouTube-miglioDev-red?logo=youtube&logoColor=white)](https://youtube.com/@migliodev)
+
+</div>>
