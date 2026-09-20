@@ -5,19 +5,16 @@ import os
 from lxml import etree
 import time
 import hashlib
-
 # A project by miglioDev
-
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
-USER_NAME = os.environ['USER_NAME'] 
+USER_NAME = os.environ['USER_NAME']
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0}
 
-BIRTHDATE = datetime.datetime(2006, 1, 1)  
+BIRTHDATE = datetime.datetime(2006, 1, 1)
 
 def daily_readme(birthday):
     diff = relativedelta.relativedelta(datetime.datetime.today(), birthday)
-    return '{} {}'.format(
-        diff.years, 'year' + format_plural(diff.years))
+    return '{} {}'.format(diff.years, 'year' + format_plural(diff.years))
 
 def format_plural(unit):
     return 's' if unit != 1 else ''
@@ -218,6 +215,8 @@ def flush_cache(edges, filename, comment_size):
     with open(filename, 'w') as f:
         f.writelines(data)
         for node in edges:
+            if node['node'] is None:
+                continue
             f.write(hashlib.sha256(node['node']['nameWithOwner'].encode('utf-8')).hexdigest() + ' 0 0 0 0\n')
 
 def force_close_file(data, cache_comment):
@@ -229,7 +228,11 @@ def force_close_file(data, cache_comment):
 
 def stars_counter(data):
     total_stars = 0
-    for node in data: total_stars += node['node']['stargazers']['totalCount']
+    for node in data:
+        if node['node'] is None:
+            print('Attenzione: un repository non e\' accessibile con il token attuale, saltato nel conteggio stelle.')
+            continue
+        total_stars += node['node']['stargazers']['totalCount']
     return total_stars
 
 def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
