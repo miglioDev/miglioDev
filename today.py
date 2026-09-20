@@ -5,7 +5,7 @@ import os
 from lxml import etree
 import time
 import hashlib
-# A project by miglioDev
+
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ['USER_NAME']
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0}
@@ -67,11 +67,14 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del
     }'''
     variables = {'owner_affiliation': owner_affiliation, 'login': USER_NAME, 'cursor': cursor}
     request = simple_request(graph_repos_stars.__name__, query, variables)
+    response_json = request.json()
+    if response_json.get('errors'):
+        print('GraphQL ha restituito errori parziali in graph_repos_stars:', response_json['errors'])
     if request.status_code == 200:
         if count_type == 'repos':
-            return request.json()['data']['user']['repositories']['totalCount']
+            return response_json['data']['user']['repositories']['totalCount']
         elif count_type == 'stars':
-            return stars_counter(request.json()['data']['user']['repositories']['edges'])
+            return stars_counter(response_json['data']['user']['repositories']['edges'])
 
 def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
     query_count('recursive_loc')
