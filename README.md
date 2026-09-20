@@ -1,19 +1,15 @@
 <div align="center">
-  
-# miglioDev
-### _Turning coffee into code_ ☕
 
-💻 **Computer Science Student**  
-🐧 **Linux Enthusiast**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/miglioDev/miglioDev/main/intro_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/miglioDev/miglioDev/main/intro_light.svg">
+  <img src="https://raw.githubusercontent.com/miglioDev/miglioDev/main/intro_light.svg" alt="miglioDev">
+</picture>
 
----
-
-[![GitHub Streak](https://github-readme-streak-stats-khaki-zeta.vercel.app?user=miglioDev&theme=dark&hide_border=true&background=0D1117)](https://git.io/streak-stats)
-
----
-
-▶ Linux & Programming videos
-
-[![YouTube](https://img.shields.io/badge/YouTube-miglioDev-red?logo=youtube&logoColor=white)](https://youtube.com/@migliodev)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/miglioDev/miglioDev/main/dark_mode.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/miglioDev/miglioDev/main/light_mode.svg">
+  <img src="https://raw.githubusercontent.com/miglioDev/miglioDev/main/light_mode.svg" alt="GitHub stats di miglioDev">
+</picture>
 
 </div>
