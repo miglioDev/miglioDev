@@ -63,7 +63,7 @@ text, tspan {white-space: pre;}
 <tspan x="507" y="442" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots"> ... </tspan><tspan class="value" id="loc_data">57,042</tspan> ( <tspan class="addColor" id="loc_add">76,338</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots"> </tspan><tspan class="delColor" id="loc_del">19,296</tspan><tspan class="delColor">--</tspan> )
 </text>
 <text x="15" y="30" font-size="14px"><tspan fill="#3fb950">miglioDev@github</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~$</tspan><tspan fill="#c9d1d9"> neofetch</tspan></text>
-<text x="1175" y="30" font-size="12px" text-anchor="end" fill="#6e7681">last sync: <tspan id="last_sync">2026-10-09</tspan></text>
+<text x="1175" y="30" font-size="12px" text-anchor="end" fill="#6e7681">last sync: <tspan id="last_sync">2026-10-10</tspan></text>
 <rect x="507" y="506" width="16" height="16" fill="#000000"/>
 <rect x="525" y="506" width="16" height="16" fill="#aa0000"/>
 <rect x="543" y="506" width="16" height="16" fill="#00aa00"/>
